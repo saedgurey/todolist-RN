@@ -95,7 +95,8 @@ export default function Index() {
     const DeleteItem = async()=>{
       deleteDoc(ref);
 // Update UI by removing the deleted item from state
-setTodos(filter(todo => todo.id !== item.id));    }
+ setTodos(prevTodos => prevTodos.filter(todo => todo.id !== item.id));  
+}
 
 return(
 
